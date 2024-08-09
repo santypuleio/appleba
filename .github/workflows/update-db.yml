@@ -3,7 +3,7 @@ name: Update db.json
 on:
   push:
     branches:
-      - master  # O la rama que estés utilizando
+      - master
 
 jobs:
   update-db:
@@ -24,3 +24,7 @@ jobs:
         author_name: 'GitHub Actions'
         author_email: 'actions@github.com'
         message: 'Actualizar db.json con nuevos datos'
+        add: 'db.json'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
